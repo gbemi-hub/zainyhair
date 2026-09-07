@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Zainy's Hair</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+           background: #f5f0eb;
+        }
+
+        /* ===== MAIN HEADER ===== */
+        .main-header {
+            background: #4a3724;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 3px solid #d4a373;
+            position: relative;
+        }
+
+        .logo {
+            flex: 1;
+        }
+
+        .logo h1 {
+            color: #f5ede4;
+            font-size: 28px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .logo h1 span {
+            color: #d4a373;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #f5ede4;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #d4a373;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d4a373;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: #d4a373;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* ===== RIGHT BUTTONS ===== */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .btn-book {
+            background: #d4a373;
+            color: #2d1f12;
+            border: none;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-book:hover {
+            background: #e8c49a;
+            transform: scale(1.02);
+        }
+
+        .btn-book i {
+            margin-right: 8px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2.5px;
+            background: #f5ede4;
+            border-radius: 4px;
+            transition: 0.3s ease;
+        }
+
+        /* Hamburger animation to X */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================================
+                   HERO SECTION
+                ============================================================ */
+        .hero-section {
+            background: #f5f0eb;
+            padding: 80px 40px 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(212, 163, 115, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-section .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-section .hero-content .heading-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .hero-section .hero-content .heading-wrapper .flag-svg {
+            width: 44px;
+            height: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+
+        .hero-section .hero-content h1 {
+            font-size: 50px;
+            font-family: "Exo", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #4a3724;
+            letter-spacing: 4px;
+            line-height: 1.1;
+            display: inline;
+        }
+
+        .hero-section .hero-content h1 span {
+            color: #d4a373;
+        }
+
+        .hero-section .hero-content .subtitle {
+            font-size: 20px;
+            color: #6b4f34;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .hero-section .hero-content .tagline {
+            font-size: 16px;
+            color: #d4a373;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+            font-style: italic;
+        }
+
+        .hero-section .hero-content .divider {
+            width: 60px;
+            height: 2px;
+            background: #d4a373;
+            margin: 15px auto 30px;
+        }
+
+        .hero-section .hero-content .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hero-section .hero-content .btn-hero-primary {
+            display: inline-block;
+            background: #d4a373;
+            color: #2d1f12;
+            padding: 14px 40px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero-section .hero-content .btn-hero-primary:hover {
+            background: #e8c49a;
+            transform: scale(1.03);
+        }
+
+        .hero-section .hero-content .btn-hero-primary i {
+            margin-right: 8px;
+        }
+
+        .hero-section .hero-content .btn-hero-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #4a3724;
+            padding: 14px 40px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid #4a3724;
+            cursor: pointer;
+        }
+
+        .hero-section .hero-content .btn-hero-secondary:hover {
+            background: #4a3724;
+            color: #f5ede4;
+            transform: scale(1.03);
+        }
+
+        .hero-section .hero-content .btn-hero-secondary i {
+            margin-right: 8px;
+        }
+
+        .hero-section .hero-content .btn-hero-outline {
+            display: inline-block;
+            background: transparent;
+            color: #4a3724;
+            padding: 14px 40px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid #4a3724;
+            cursor: pointer;
+        }
+
+        .hero-section .hero-content .btn-hero-outline:hover {
+            background: #4a3724;
+            color: #f5ede4;
+            transform: scale(1.03);
+        }
+
+        .hero-section .hero-content .btn-hero-outline i {
+            margin-right: 8px;
+        }
+
+        /* ===== HERO STATS ===== */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding-top: 30px;
+            border-top: 1px solid rgba(74, 55, 36, 0.15);
+        }
+
+        .hero-stats .stat-item {
+            color: #6b4f34;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-stats .stat-item i {
+            color: #d4a373;
+            margin-right: 8px;
+        }
+
+        .hero-stats .stat-item strong {
+            color: #4a3724;
+        }
+
+        .hero-stats .stat-item a {
+            color: #6b4f34;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .hero-stats .stat-item a:hover {
+            color: #d4a373;
+        }
+
+        /* ============================================================
+                   CONSULTATION BANNER
+                ============================================================ */
+        .consultation-banner {
+            background: #4a3724;
+            padding: 25px 40px;
+            text-align: center;
+            border-top: 3px solid #d4a373;
+            border-bottom: 3px solid #d4a373;
+        }
+
+        .consultation-banner p {
+            color: #f5ede4;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .consultation-banner p strong {
+            color: #d4a373;
+            font-size: 22px;
+        }
+
+        .consultation-banner p i {
+            color: #d4a373;
+            margin: 0 8px;
+        }
+
+        .consultation-banner .btn-consult {
+            display: inline-block;
+            background: #d4a373;
+            color: #2d1f12;
+            padding: 10px 35px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .consultation-banner .btn-consult:hover {
+            background: #e8c49a;
+            transform: scale(1.02);
+        }
+
+        .consultation-banner .btn-consult i {
+            margin-right: 8px;
+        }
+
+        /* ============================================================
+                   SERVICES SECTION
+                ============================================================ */
+        .services-section {
+            padding: 80px 40px;
+            background: #f5f0eb;
+            text-align: center;
+        }
+
+        .services-section .section-title {
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #3e2c1b;
+            margin-bottom: 10px;
+        }
+
+        .services-section .section-divider {
+            width: 60px;
+            height: 2px;
+            background: #d4a373;
+            margin: 15px auto 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(62, 44, 27, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-bottom: 4px solid #d4a373;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(62, 44, 27, 0.15);
+        }
+
+        .service-card .card-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-card .card-body {
+            padding: 25px 25px 30px;
+        }
+
+        .service-card .card-body h3 {
+            font-size: 22px;
+            color: #3e2c1b;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .service-card .card-body .subtitle {
+            font-size: 13px;
+            color: #d4a373;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .service-card .card-body p {
+            font-size: 14px;
+            color: #6b5a4a;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .service-card .card-body .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .service-card .card-body .features span {
+            background: #f5f0eb;
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #4a3724;
+            font-weight: 500;
+        }
+
+        .service-card .card-body .features span i {
+            color: #d4a373;
+            margin-right: 4px;
+        }
+
+        .service-card .card-body .btn-service {
+            display: inline-block;
+            background: #4a3724;
+            color: #f5ede4;
+            padding: 10px 32px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service-card .card-body .btn-service:hover {
+            background: #d4a373;
+            color: #2d1f12;
+            transform: scale(1.02);
+        }
+
+        .service-card .card-body .btn-service i {
+            margin-right: 8px;
+        }
+
+        .view-all-services {
+            margin-top: 50px;
+        }
+
+        .view-all-services p {
+            color: #6b4f34;
+            font-size: 16px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .view-all-services .btn-view-all {
+            display: inline-block;
+            background: transparent;
+            color: #4a3724;
+            border: 2px solid #4a3724;
+            padding: 12px 40px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .view-all-services .btn-view-all:hover {
+            background: #4a3724;
+            color: #f5ede4;
+        }
+
+        /* ============================================================
+                   TESTIMONIALS SECTION
+                ============================================================ */
+        .testimonials-section {
+            padding: 80px 40px;
+            background: #4a3724;
+            text-align: center;
+            color: #f5ede4;
+        }
+
+        .testimonials-section .section-title {
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #f5ede4;
+            margin-bottom: 10px;
+        }
+
+        .testimonials-section .section-title span {
+            display: block;
+            font-weight: 700;
+            color: #d4a373;
+            letter-spacing: 6px;
+        }
+
+        .testimonials-section .section-divider {
+            width: 60px;
+            height: 2px;
+            background: #d4a373;
+            margin: 15px auto 40px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 163, 115, 0.15);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-align: center;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4a373;
+        }
+
+        .testimonial-card .stars {
+            color: #d4a373;
+            font-size: 18px;
+            margin-bottom: 12px;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-card .testimonial-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #e8ddd0;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .client-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #d4a373;
+        }
+
+        .testimonial-card .client-location {
+            font-size: 13px;
+            color: #b8a08c;
+        }
+
+        /* ============================================================
+                   WHY CHOOSE US SECTION
+                ============================================================ */
+        .why-choose-section {
+            padding: 80px 40px;
+            background: #f5f0eb;
+            text-align: center;
+        }
+
+        .why-choose-section .section-title {
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #3e2c1b;
+            margin-bottom: 10px;
+        }
+
+        .why-choose-section .section-title span {
+            display: block;
+            font-weight: 700;
+            color: #d4a373;
+            letter-spacing: 6px;
+        }
+
+        .why-choose-section .section-divider {
+            width: 60px;
+            height: 2px;
+            background: #d4a373;
+            margin: 15px auto 40px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            background: #fff;
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(62, 44, 27, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 3px solid #d4a373;
+        }
+
+        .why-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(62, 44, 27, 0.15);
+        }
+
+        .why-item .icon {
+            font-size: 40px;
+            color: #d4a373;
+            margin-bottom: 15px;
+        }
+
+        .why-item h3 {
+            font-size: 18px;
+            color: #3e2c1b;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: #6b5a4a;
+            line-height: 1.6;
+        }
+
+        /* ============================================================
+                   FOOTER
+                ============================================================ */
+        .footer {
+            background: #2d1f12;
+            color: #f5ede4;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer .footer-col h4 {
+            font-size: 18px;
+            color: #d4a373;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer .footer-col p,
+        .footer .footer-col a {
+            color: #b8a08c;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer .footer-col a:hover {
+            color: #d4a373;
+        }
+
+        .footer .footer-col .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer .footer-col .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 163, 115, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #d4a373;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .footer .footer-col .social-links a:hover {
+            background: #d4a373;
+            color: #2d1f12;
+        }
+
+        .footer .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(212, 163, 115, 0.15);
+            font-size: 14px;
+            color: #b8a08c;
+        }
+
+        .footer .footer-bottom span {
+            color: #d4a373;
+        }
+
+        /* ============================================================
+                   MOBILE RESPONSIVE
+                ============================================================ */
+        @media (max-width: 992px) {
+            .main-header {
+                padding: 15px 20px;
+                justify-content: center;
+                flex-wrap: nowrap;
+            }
+
+            .logo {
+                flex: 1;
+                text-align: center;
+            }
+
+            .logo h1 {
+                font-size: 30px;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(74, 55, 36, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 25px;
+                padding: 40px 20px;
+                z-index: 1000;
+                margin: 0;
+                border: none;
+            }
+
+            .nav-links.open {
+                display: flex !important;
+            }
+
+            .nav-links a {
+                font-size: 20px;
+                color: #f5ede4;
+                text-decoration: none;
+            }
+
+            .nav-links a:hover {
+                color: #d4a373;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+                order: 2;
+                margin-left: auto;
+            }
+
+            .header-actions .btn-book {
+                display: none;
+            }
+
+            /* Mobile book button inside nav */
+            .nav-links .mobile-book-btn {
+                display: block !important;
+                background: #d4a373;
+                color: #2d1f12;
+                padding: 14px 50px;
+                font-size: 17px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                border-radius: 30px;
+                text-decoration: none;
+                text-transform: uppercase;
+                margin-top: 15px;
+                transition: background 0.3s, transform 0.2s;
+                border: 2px solid #d4a373;
+                box-shadow: 0 4px 20px rgba(212, 163, 115, 0.3);
+                width: auto;
+                text-align: center;
+            }
+
+            .nav-links .mobile-book-btn:hover {
+                background: #e8c49a;
+                transform: scale(1.05);
+            }
+
+            .nav-links .mobile-book-btn i {
+                margin-right: 10px;
+            }
+
+            .hero-section {
+                padding: 60px 30px 50px;
+                min-height: 400px;
+            }
+
+            .hero-section .hero-content .heading-wrapper .flag-svg {
+                width: 36px;
+                height: 24px;
+            }
+
+            .hero-section .hero-content h1 {
+                font-size: 42px;
+                letter-spacing: 2px;
+            }
+
+            .hero-section .hero-content .subtitle {
+                font-size: 18px;
+            }
+
+            .hero-section .hero-content .tagline {
+                font-size: 14px;
+            }
+
+            /* ===== HERO STATS - 3+1 GRID ON MOBILE ===== */
+            .hero-stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px 20px;
+                padding-top: 30px;
+                border-top: 1px solid rgba(74, 55, 36, 0.15);
+                max-width: 450px;
+                margin: 0 auto;
+                justify-items: center;
+            }
+
+            /* Make the 4th item (Instagram) span full width on its own row */
+            .hero-stats .stat-item:nth-child(4) {
+                grid-column: 1 / -1;
+                justify-self: center;
+            }
+
+            .hero-stats .stat-item {
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                text-align: center;
+                color: #6b4f34;
+            }
+
+            .hero-stats .stat-item i {
+                color: #d4a373;
+                margin-right: 8px;
+                font-size: 16px;
+            }
+
+            .hero-stats .stat-item strong {
+                color: #4a3724;
+            }
+
+            .hero-stats .stat-item a {
+                color: #6b4f34;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            .hero-stats .stat-item a:hover {
+                color: #d4a373;
+            }
+
+            .consultation-banner {
+                padding: 20px 20px;
+            }
+
+            .consultation-banner p {
+                font-size: 16px;
+            }
+
+            .services-section {
+                padding: 60px 20px;
+            }
+
+            .services-section .section-title {
+                font-size: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .service-card .card-image {
+                height: 250px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 50px 20px 40px;
+                min-height: 350px;
+            }
+
+            .hero-section .hero-content .heading-wrapper .flag-svg {
+                width: 30px;
+                height: 20px;
+            }
+
+            .hero-section .hero-content h1 {
+                font-size: 32px;
+                letter-spacing: 1px;
+            }
+
+            .hero-section .hero-content .subtitle {
+                font-size: 16px;
+            }
+
+            .hero-section .hero-content .tagline {
+                font-size: 13px;
+            }
+
+            .hero-section .hero-content .hero-buttons {
+                gap: 12px;
+            }
+
+            .hero-section .hero-content .btn-hero-primary,
+            .hero-section .hero-content .btn-hero-secondary,
+            .hero-section .hero-content .btn-hero-outline {
+                padding: 12px 28px;
+                font-size: 13px;
+            }
+
+            .consultation-banner p {
+                font-size: 15px;
+            }
+
+            .consultation-banner p strong {
+                font-size: 18px;
+            }
+
+            .consultation-banner .btn-consult {
+                padding: 8px 28px;
+                font-size: 13px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-card .card-image {
+                height: 280px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer .footer-col .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-header {
+                padding: 12px 15px;
+            }
+
+            .header-actions {
+                gap: 10px;
+            }
+
+            .logo h1 {
+                font-size: 20px;
+            }
+
+            .hero-section .hero-content .heading-wrapper {
+                gap: 10px;
+            }
+
+            .hero-section .hero-content .heading-wrapper .flag-svg {
+                width: 26px;
+                height: 18px;
+            }
+
+            .hero-section .hero-content h1 {
+                font-size: 26px;
+            }
+
+            .hero-section .hero-content .subtitle {
+                font-size: 14px;
+            }
+
+            .hero-section .hero-content .tagline {
+                font-size: 12px;
+            }
+
+            .hero-section .hero-content .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-section .hero-content .btn-hero-primary,
+            .hero-section .hero-content .btn-hero-secondary,
+            .hero-section .hero-content .btn-hero-outline {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* ===== HERO STATS - 3+1 ON SMALL MOBILE ===== */
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px 12px;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .hero-stats .stat-item:nth-child(4) {
+                grid-column: 1 / -1;
+                justify-self: center;
+            }
+
+            .hero-stats .stat-item {
+                font-size: 12px;
+            }
+
+            .hero-stats .stat-item i {
+                font-size: 13px;
+                margin-right: 5px;
+            }
+
+            .consultation-banner {
+                padding: 15px;
+            }
+
+            .consultation-banner p {
+                font-size: 14px;
+            }
+
+            .consultation-banner p strong {
+                font-size: 16px;
+            }
+
+            .services-section {
+                padding: 50px 15px;
+            }
+
+            .services-section .section-title {
+                font-size: 24px;
+            }
+
+            .service-card .card-image {
+                height: 220px;
+            }
+
+            .service-card .card-body {
+                padding: 20px;
+            }
+
+            .service-card .card-body h3 {
+                font-size: 19px;
+            }
+
+            .testimonials-section {
+                padding: 50px 20px;
+            }
+
+            .testimonials-section .section-title {
+                font-size: 28px;
+            }
+
+            .why-choose-section {
+                padding: 50px 20px;
+            }
+
+            .why-choose-section .section-title {
+                font-size: 28px;
+            }
+
+            .footer {
+                padding: 40px 20px 20px;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+            }
+
+            .nav-links .mobile-book-btn {
+                font-size: 15px;
+                padding: 12px 40px;
+            }
+        }
+
+        /* Hide mobile book button on desktop */
+        @media (min-width: 993px) {
+            .nav-links .mobile-book-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== MAIN HEADER ===== -->
+    <header class="main-header">
+
+        <div class="logo">
+            <h1>Zainy's <span>Hair</span></h1>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="#">TRAINING</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li>
+                <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20please." target="_blank" class="mobile-book-btn">
+                    <i class="fab fa-whatsapp"></i> BOOK AN APPOINTMENT
+                </a>
+            </li>
+        </ul>
+
+        <div class="header-actions">
+            <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20please." target="_blank" class="btn-book"><i class="fab fa-whatsapp"></i> BOOK AN APPOINTMENT</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="heading-wrapper">
+                    <h1>Mobile Locs Specialist</h1>
+                    <svg class="flag-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40">
+                        <rect width="60" height="40" fill="#012169"/>
+                        <path d="M0 0 L60 40 M60 0 L0 40" stroke="white" stroke-width="6"/>
+                        <path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="3"/>
+                        <rect x="20" y="0" width="20" height="40" fill="white"/>
+                        <rect x="20" y="0" width="20" height="40" fill="#C8102E" stroke="none" width="12"/>
+                        <rect x="0" y="15" width="60" height="10" fill="white"/>
+                        <rect x="0" y="15" width="60" height="10" fill="#C8102E" stroke="none" width="6"/>
+                    </svg>
+                </div>
+                <p class="subtitle">Book with Zainy — Specializing in Locs and Braids</p>
+                <div class="divider"></div>
+                <p class="tagline">Giving you the look you love.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20please." target="_blank" class="btn-hero-primary"><i class="fab fa-whatsapp"></i> Book Your Appointment</a>
+                    <a href="faq.html" class="btn-hero-secondary"><i class="fas fa-question-circle"></i> Read Booking FAQs</a>
+                    <a href="portfolio.html" class="btn-hero-outline"><i class="fas fa-images"></i> View Our Works</a>
+                </div>
+                <div class="hero-stats">
+                    <span class="stat-item"><i class="fas fa-star"></i> <strong>5-Star</strong> Rated</span>
+                    <span class="stat-item"><i class="fas fa-heart"></i>United Kingdom</span>
+                    <span class="stat-item">
+                        <i class="fab fa-tiktok"></i> 
+                        <a href="https://www.tiktok.com/@zainys.hair?_r=1&_t=ZN-99QGXS8PSXm" target="_blank">TikTok</a>
+                    </span>
+                    <span class="stat-item">
+                        <i class="fab fa-instagram"></i> 
+                        <a href="https://www.instagram.com/zainys.hair?igsi=MW4weDc1dTN2cXNjcA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONSULTATION BANNER ===== -->
+        <section class="consultation-banner">
+            <p>
+                <i class="fas fa-hand-holding-heart"></i>
+                Before we create your dream Locs style, consultation is required <span style="color:#d4a373;font-weight:700;">(Just for Fresh locs)</span>
+                <i class="fas fa-arrow-right"></i>
+            </p>
+            <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20a%20consultation%20for%20fresh%20locs%20please." target="_blank" class="btn-consult"><i class="fab fa-whatsapp"></i> Book Your Consultation</a>
+        </section>
+
+        <!-- ===== SERVICES SECTION (with ID for scrolling) ===== -->
+        <section class="services-section" id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="section-divider"></div>
+            <div class="services-grid">
+
+                <!-- Micro Twist -->
+                <div class="service-card">
+                    <img src="images/micritwist4.jpg" alt="Microtwist" class="card-image" />
+                    <div class="card-body">
+                        <h3>Micro Twist</h3>
+                        <p>Two small strands twisted together that start soft but can come undone easily.</p>
+                        <div class="features">
+                            <span><i class="far fa-clock"></i> 4-6 hrs</span>
+                            <span><i class="fas fa-star"></i> Curly ends</span>
+                            <span><i class="fas fa-leaf"></i> Low maintenance</span>
+                        </div>
+                        <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20for%20Micro%20Twist%20please." target="_blank" class="btn-service"><i class="fab fa-whatsapp"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Micro Braids -->
+                <div class="service-card">
+                    <img src="images/microbraids 1.jpeg" alt="Micro Braids" class="card-image" />
+                    <div class="card-body">
+                        <h3>Micro Braids</h3>
+                        <p>Three small strands braided together that lie flat and slowly turn into locs.</p>
+                        <div class="features">
+                            <span><i class="far fa-clock"></i> 3-4 hrs</span>
+                            <span><i class="fas fa-shield-alt"></i> Protective</span>
+                            <span><i class="fas fa-bolt"></i> Quick install</span>
+                        </div>
+                        <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20for%20Micro%20Braids%20please." target="_blank" class="btn-service"><i class="fab fa-whatsapp"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Sisterlocks -->
+                <div class="service-card">
+                    <img src="images/sister 2.jpg" alt="Sisterlocks" class="card-image" />
+                    <div class="card-body">
+                        <h3>Sisterlocks</h3>
+                        <p>Very small, even locs made with a special tool that lock right away.</p>
+                        <div class="features">
+                            <span><i class="far fa-clock"></i> 2-3 hrs</span>
+                            <span><i class="fas fa-feather"></i> Natural look</span>
+                            <span><i class="fas fa-sync-alt"></i> Permanent</span>
+                        </div>
+                        <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20for%20Sisterlocks%20please." target="_blank" class="btn-service"><i class="fab fa-whatsapp"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Locs Retie/Repair/Styling -->
+                <div class="service-card">
+                    <img src="images/style 10.jpg" alt="Locs Styling" class="card-image" />
+                    <div class="card-body">
+                        <h3>Locs Retie/Repair/Styling</h3>
+                        <p>Deep conditioning, keratin smoothing, and scalp therapies to restore and nourish your hair.</p>
+                        <div class="features">
+                            <span><i class="far fa-clock"></i> 1-2 hrs</span>
+                            <span><i class="fas fa-spa"></i> Nourishing</span>
+                            <span><i class="fas fa-heart"></i> Restorative</span>
+                        </div>
+                        <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20for%20Locs%20Retie%20Repair%20Styling%20please." target="_blank" class="btn-service"><i class="fab fa-whatsapp"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Knotless Braids -->
+                <div class="service-card">
+                    <img src="images/braids1.jpg" alt="Knotless Braids" class="card-image" />
+                    <div class="card-body">
+                        <h3>Knotless Braids</h3>
+                        <p>Pain-free braids that start with your natural hair for a seamless, natural-looking finish.</p>
+                        <div class="features">
+                            <span><i class="far fa-clock"></i> 3-5 hrs</span>
+                            <span><i class="fas fa-shield-alt"></i> Protective</span>
+                            <span><i class="fas fa-feather"></i> Lightweight</span>
+                        </div>
+                        <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20for%20Knotless%20Braids%20please." target="_blank" class="btn-service"><i class="fab fa-whatsapp"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Instant Locs -->
+                <div class="service-card">
+                    <img src="images/trad 1.jpg" alt="Instant Locs" class="card-image" />
+                    <div class="card-body">
+                        <h3>Instant Locs</h3>
+                        <p>Free-spirited braids with curly ends that create a romantic, effortless look.</p>
+                        <div class="features">
+                            <span><i class="far fa-clock"></i> 4-6 hrs</span>
+                            <span><i class="fas fa-star"></i> Curly ends</span>
+                            <span><i class="fas fa-leaf"></i> Versatile</span>
+                        </div>
+                        <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20for%20Instant%20Locs%20please." target="_blank" class="btn-service"><i class="fab fa-whatsapp"></i> Book This Service</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="view-all-services">
+                <p>Want to see what we've done? Explore our portfolio to see real results on real clients.</p>
+                <a href="portfolio.html" class="btn-view-all"><i class="fas fa-images"></i> View Our Work</a>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS SECTION ===== -->
+        <section class="testimonials-section">
+            <h2 class="section-title">What Our <span>Clients Say</span></h2>
+            <div class="section-divider"></div>
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"Absolutely love my micro twists! Zainy is so professional and made sure I was comfortable throughout. My hair has never looked better!"</p>
+                    <p class="client-name">Abisola T.</p>
+                    <p class="client-location">Sheffield</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"I was so nervous about getting sisterlocks but Zainy explained everything and the results are stunning. 10/10 would recommend!"</p>
+                    <p class="client-name">Tobiloba K.</p>
+                    <p class="client-location">London</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"Zainy came to my home and did my knotless braids. She was on time, super friendly, and the braids lasted for weeks. Will definitely book again!"</p>
+                    <p class="client-name">Aisha R.</p>
+                    <p class="client-location">Birmingham</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== WHY CHOOSE US SECTION ===== -->
+        <section class="why-choose-section">
+            <h2 class="section-title">Why <span>Choose Us</span></h2>
+            <div class="section-divider"></div>
+            <div class="why-grid">
+
+                <div class="why-item">
+                    <div class="icon"><i class="fas fa-star"></i></div>
+                    <h3>5-Star Service</h3>
+                    <p>Rated 5 stars by our clients for exceptional quality and care in every service we provide.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="icon"><i class="fas fa-home"></i></div>
+                    <h3>Mobile Service</h3>
+                    <p>We come to you! Enjoy professional hair services in the comfort of your own home.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Consultation</h3>
+                    <p>We offer consultations for fresh locs to understand your needs and recommend the perfect style for you.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="icon"><i class="fas fa-heart"></i></div>
+                    <h3>Passionate About Hair</h3>
+                    <p>We are truly passionate about hair and dedicated to giving you the look you love.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+
+            <div class="footer-col">
+                <h4>Zainy's Hair</h4>
+                <p>Mobile Locs Specialist in United Kingdom. Specializing in locs and Braids.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/zainys.hair?igsi=MW4weDc1dTN2cXNjcA%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@zainys.hair?_r=1&_t=ZN-99QGXS8PSXm" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="#services">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="#">Training</a>
+                <a href="#">About Us</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone" style="color:#d4a373;margin-right:8px;"></i> +447823 687576</p>
+                <p><i class="fas fa-map-marker-alt" style="color:#d4a373;margin-right:8px;"></i> United Kingdom</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <p>Based on appointment</p>
+                <p style="margin-top:10px;color:#d4a373;">Bookings available 24/7</p>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>Zainy's Hair</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== MOBILE MENU TOGGLE SCRIPT ===== -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
