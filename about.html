@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us - Zainy's Hair</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+           background: #f5f0eb;
+        }
+
+        /* ===== MAIN HEADER ===== */
+        .main-header {
+            background: #4a3724;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 3px solid #d4a373;
+            position: relative;
+        }
+
+        .logo {
+            flex: 1;
+        }
+
+        .logo h1 {
+            color: #f5ede4;
+            font-size: 28px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .logo h1 span {
+            color: #d4a373;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #f5ede4;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #d4a373;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d4a373;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: #d4a373;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* ===== RIGHT BUTTONS ===== */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .btn-book {
+            background: #d4a373;
+            color: #2d1f12;
+            border: none;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-book:hover {
+            background: #e8c49a;
+            transform: scale(1.02);
+        }
+
+        .btn-book i {
+            margin-right: 8px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2.5px;
+            background: #f5ede4;
+            border-radius: 4px;
+            transition: 0.3s ease;
+        }
+
+        /* Hamburger animation to X */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================================
+                   ABOUT US PAGE - NO IMAGE
+                ============================================================ */
+        .about-header {
+            padding: 60px 40px 20px;
+            text-align: center;
+        }
+
+        .about-header h1 {
+            font-size: 48px;
+            font-family: "Bungee", sans-serif;
+            font-weight: 400;
+            color: #4a3724;
+            letter-spacing: 3px;
+        }
+
+        .about-header h1 span {
+            color: #d4a373;
+        }
+
+        .about-header .divider {
+            width: 60px;
+            height: 2px;
+            background: #d4a373;
+            margin: 15px auto 30px;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            padding: 20px 40px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Decorative Icon */
+        .about-icon {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-icon i {
+            font-size: 50px;
+            color: #d4a373;
+            background: #fff;
+            padding: 25px;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(62, 44, 27, 0.08);
+            border: 2px solid #d4a373;
+        }
+
+        .about-text {
+            background: #fff;
+            padding: 45px 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(62, 44, 27, 0.08);
+            border-bottom: 4px solid #d4a373;
+        }
+
+        .about-text p {
+            font-size: 17px;
+            color: #6b5a4a;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .about-text p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .about-text .highlight {
+            color: #d4a373;
+            font-weight: 600;
+        }
+
+        .about-text .mission-box {
+            background: #fcf9f5;
+            padding: 25px 30px;
+            border-radius: 12px;
+            border-left: 4px solid #d4a373;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .about-text .mission-box p {
+            font-size: 18px;
+            color: #3e2c1b;
+            font-weight: 600;
+            margin-bottom: 0;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        .about-text .mission-box i {
+            color: #d4a373;
+            margin: 0 8px;
+        }
+
+        /* ============================================================
+                   FOOTER
+                ============================================================ */
+        .footer {
+            background: #2d1f12;
+            color: #f5ede4;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer .footer-col h4 {
+            font-size: 18px;
+            color: #d4a373;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer .footer-col p,
+        .footer .footer-col a {
+            color: #b8a08c;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer .footer-col a:hover {
+            color: #d4a373;
+        }
+
+        .footer .footer-col .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer .footer-col .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 163, 115, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #d4a373;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .footer .footer-col .social-links a:hover {
+            background: #d4a373;
+            color: #2d1f12;
+        }
+
+        .footer .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(212, 163, 115, 0.15);
+            font-size: 14px;
+            color: #b8a08c;
+        }
+
+        .footer .footer-bottom span {
+            color: #d4a373;
+        }
+
+        /* ============================================================
+                   MOBILE RESPONSIVE
+                ============================================================ */
+        @media (max-width: 992px) {
+            .main-header {
+                padding: 15px 20px;
+                justify-content: center;
+                flex-wrap: nowrap;
+            }
+
+            .logo {
+                flex: 1;
+                text-align: center;
+            }
+
+            .logo h1 {
+                font-size: 30px;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(74, 55, 36, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 25px;
+                padding: 40px 20px;
+                z-index: 1000;
+                margin: 0;
+                border: none;
+            }
+
+            .nav-links.open {
+                display: flex !important;
+            }
+
+            .nav-links a {
+                font-size: 20px;
+                color: #f5ede4;
+                text-decoration: none;
+            }
+
+            .nav-links a:hover {
+                color: #d4a373;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+                order: 2;
+                margin-left: auto;
+            }
+
+            .header-actions .btn-book {
+                display: none;
+            }
+
+            .nav-links .mobile-book-btn {
+                display: block !important;
+                background: #d4a373;
+                color: #2d1f12;
+                padding: 14px 50px;
+                font-size: 17px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                border-radius: 30px;
+                text-decoration: none;
+                text-transform: uppercase;
+                margin-top: 15px;
+                transition: background 0.3s, transform 0.2s;
+                border: 2px solid #d4a373;
+                box-shadow: 0 4px 20px rgba(212, 163, 115, 0.3);
+                width: auto;
+                text-align: center;
+            }
+
+            .nav-links .mobile-book-btn:hover {
+                background: #e8c49a;
+                transform: scale(1.05);
+            }
+
+            .nav-links .mobile-book-btn i {
+                margin-right: 10px;
+            }
+
+            .about-header h1 {
+                font-size: 36px;
+            }
+
+            .about-section {
+                padding: 20px 20px 60px;
+            }
+
+            .about-text {
+                padding: 35px 30px;
+            }
+
+            .about-text p {
+                font-size: 16px;
+            }
+
+            .about-text .mission-box p {
+                font-size: 16px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer .footer-col .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-header {
+                padding: 12px 15px;
+            }
+
+            .header-actions {
+                gap: 10px;
+            }
+
+            .logo h1 {
+                font-size: 20px;
+            }
+
+            .about-header {
+                padding: 40px 20px 10px;
+            }
+
+            .about-header h1 {
+                font-size: 28px;
+            }
+
+            .about-section {
+                padding: 10px 15px 40px;
+            }
+
+            .about-icon i {
+                font-size: 35px;
+                padding: 18px;
+            }
+
+            .about-text {
+                padding: 25px 20px;
+            }
+
+            .about-text p {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .about-text .mission-box {
+                padding: 18px 15px;
+            }
+
+            .about-text .mission-box p {
+                font-size: 14px;
+            }
+
+            .footer {
+                padding: 40px 20px 20px;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+            }
+
+            .nav-links .mobile-book-btn {
+                font-size: 15px;
+                padding: 12px 40px;
+            }
+        }
+
+        /* Hide mobile book button on desktop */
+        @media (min-width: 993px) {
+            .nav-links .mobile-book-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== MAIN HEADER ===== -->
+    <header class="main-header">
+
+        <div class="logo">
+            <h1>Zainy's <span>Hair</span></h1>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#services">SERVICES</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="#">TRAINING</a></li>
+            <li><a href="about.html" class="active">ABOUT US</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+           
+            <li>
+                <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20please." target="_blank" class="mobile-book-btn">
+                     BOOK AN APPOINTMENT
+                </a>
+            </li>
+        </ul>
+
+        <div class="header-actions">
+            <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20please." target="_blank" class="btn-book"> BOOK AN APPOINTMENT</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- About Header -->
+        <section class="about-header">
+            <h1>About <span>Us</span></h1>
+            <div class="divider"></div>
+        </section>
+
+        <!-- ===== ABOUT SECTION - NO IMAGE ===== -->
+        <section class="about-section">
+
+            <div class="about-icon">
+                <i class="fas fa-crown"></i>
+            </div>
+
+            <div class="about-text">
+
+                <p>Welcome to <span class="highlight">Zainy's Hair</span> where we give you the look you love.</p>
+
+                <p>We are passionate about creating natural Locs that are personalized to fit your hair type and lifestyle. Because this isn't just Locs... it's <span class="highlight">confidence</span>.</p>
+
+                <p>Every client is important to us. And because we know your time matters, we bring the salon experience to your doorstep. From the comfort of your home, your Locs will be installed and maintained with utmost love and attention to detail.</p>
+
+                <div class="mission-box">
+                    <p><i class="fas fa-quote-left"></i> Let's create the look you love together. <i class="fas fa-quote-right"></i></p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+
+            <div class="footer-col">
+                <h4>Zainy's Hair</h4>
+                <p>Mobile Locs Specialist in United Kingdom. Specializing in locs and Braids.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/zainys.hair?igsi=MW4weDc1dTN2cXNjcA%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@zainys.hair?_r=1&_t=ZN-99QGXS8PSXm" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="#">Training</a>
+                <a href="about.html">About Us</a>
+                <a href="faq.html">FAQ</a>
+                <a href="booking-policy.html">Booking Policy</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone" style="color:#d4a373;margin-right:8px;"></i> +447823 687576</p>
+                <p><i class="fas fa-map-marker-alt" style="color:#d4a373;margin-right:8px;"></i> United Kingdom</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <p>Based on appointment</p>
+                <p style="margin-top:10px;color:#d4a373;">Bookings available 24/7</p>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>Zainy's Hair</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== MOBILE MENU TOGGLE SCRIPT ===== -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
