@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>FAQ - Zainy's Hair</title>
+    <title>Training - Zainy's Hair</title>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,7 +150,6 @@
             transition: 0.3s ease;
         }
 
-        /* Hamburger animation to X */
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
@@ -164,14 +163,14 @@
         }
 
         /* ============================================================
-                   FAQ PAGE
+                   TRAINING PAGE
                 ============================================================ */
-        .faq-header {
+        .training-header {
             padding: 60px 40px 20px;
             text-align: center;
         }
 
-        .faq-header h1 {
+        .training-header h1 {
             font-size: 48px;
             font-family: "Bungee", sans-serif;
             font-weight: 400;
@@ -179,95 +178,221 @@
             letter-spacing: 3px;
         }
 
-        .faq-header h1 span {
+        .training-header h1 span {
             color: #d4a373;
         }
 
-        .faq-header p {
+        .training-header p {
             font-size: 18px;
             color: #6b4f34;
             margin-top: 10px;
             letter-spacing: 1px;
         }
 
-        .faq-header .divider {
+        .training-header .divider {
             width: 60px;
             height: 2px;
             background: #d4a373;
             margin: 15px auto 30px;
         }
 
-        /* ===== FAQ SECTION ===== */
-        .faq-section {
+        /* ===== TRAINING SECTION ===== */
+        .training-section {
             padding: 20px 40px 80px;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .faq-item {
+        .training-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .training-intro p {
+            font-size: 18px;
+            color: #6b5a4a;
+            line-height: 1.9;
+        }
+
+        /* Training Cards */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+
+        .training-card {
             background: #fff;
             border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(62, 44, 27, 0.08);
             overflow: hidden;
-            transition: box-shadow 0.3s ease;
-            border-left: 4px solid #d4a373;
+            box-shadow: 0 8px 25px rgba(62, 44, 27, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-bottom: 4px solid #d4a373;
+            text-align: center;
+            padding: 40px 25px 35px;
         }
 
-        .faq-item:hover {
-            box-shadow: 0 8px 30px rgba(62, 44, 27, 0.15);
+        .training-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(62, 44, 27, 0.15);
         }
 
-        .faq-question {
-            padding: 22px 30px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fff;
-            transition: background 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: #faf6f0;
-        }
-
-        .faq-question h3 {
-            font-size: 18px;
-            color: #3e2c1b;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            padding-right: 20px;
-        }
-
-        .faq-question .toggle-icon {
-            font-size: 20px;
+        .training-card .icon {
+            font-size: 45px;
             color: #d4a373;
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
+            margin-bottom: 20px;
         }
 
-        .faq-question .toggle-icon.open {
-            transform: rotate(180deg);
+        .training-card h3 {
+            font-size: 20px;
+            color: #3e2c1b;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-            padding: 0 30px;
-            background: #fcf9f5;
+        .training-card p {
+            font-size: 14px;
+            color: #6b5a4a;
+            line-height: 1.7;
+            margin-bottom: 18px;
         }
 
-        .faq-answer.open {
-            max-height: 500px;
-            padding: 0 30px 25px;
+        .training-card .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #d4a373;
+            display: block;
+            margin-bottom: 18px;
         }
 
-        .faq-answer p {
+        .training-card .btn-training {
+            display: inline-block;
+            background: #4a3724;
+            color: #f5ede4;
+            padding: 10px 32px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .training-card .btn-training:hover {
+            background: #d4a373;
+            color: #2d1f12;
+            transform: scale(1.02);
+        }
+
+        .training-card .btn-training i {
+            margin-right: 8px;
+        }
+
+        /* ===== WHAT YOU'LL LEARN ===== */
+        .learn-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 45px 50px;
+            box-shadow: 0 4px 25px rgba(62, 44, 27, 0.08);
+            border-left: 4px solid #d4a373;
+            margin-bottom: 50px;
+        }
+
+        .learn-section h2 {
+            font-size: 28px;
+            color: #3e2c1b;
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .learn-section h2 span {
+            color: #d4a373;
+        }
+
+        .learn-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 30px;
+            list-style: none;
+        }
+
+        .learn-list li {
             font-size: 16px;
             color: #6b5a4a;
+            line-height: 1.7;
+            padding: 8px 0 8px 30px;
+            position: relative;
+        }
+
+        .learn-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            color: #d4a373;
+            font-size: 14px;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .training-cta {
+            text-align: center;
+            background: #4a3724;
+            border-radius: 12px;
+            padding: 50px 40px;
+        }
+
+        .training-cta h2 {
+            font-size: 30px;
+            color: #f5ede4;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .training-cta h2 span {
+            color: #d4a373;
+        }
+
+        .training-cta p {
+            font-size: 16px;
+            color: #e8ddd0;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             line-height: 1.8;
+        }
+
+        .training-cta .btn-cta {
+            display: inline-block;
+            background: #d4a373;
+            color: #2d1f12;
+            padding: 14px 45px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .training-cta .btn-cta:hover {
+            background: #e8c49a;
+            transform: scale(1.03);
+        }
+
+        .training-cta .btn-cta i {
+            margin-right: 8px;
         }
 
         /* ============================================================
@@ -410,7 +535,6 @@
                 display: none;
             }
 
-            /* Mobile book button inside nav */
             .nav-links .mobile-book-btn {
                 display: block !important;
                 background: #d4a373;
@@ -439,28 +563,25 @@
                 margin-right: 10px;
             }
 
-            .faq-header h1 {
+            .training-header h1 {
                 font-size: 36px;
             }
 
-            .faq-section {
+            .training-section {
                 padding: 20px 20px 60px;
             }
 
-            .faq-question {
-                padding: 18px 20px;
+            .training-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
             }
 
-            .faq-question h3 {
-                font-size: 16px;
+            .learn-list {
+                grid-template-columns: 1fr;
             }
 
-            .faq-answer {
-                padding: 0 20px;
-            }
-
-            .faq-answer.open {
-                padding: 0 20px 20px;
+            .learn-section {
+                padding: 35px 30px;
             }
 
             .footer-grid {
@@ -469,6 +590,19 @@
         }
 
         @media (max-width: 768px) {
+            .training-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .training-cta {
+                padding: 40px 25px;
+            }
+
+            .training-cta h2 {
+                font-size: 24px;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -492,40 +626,61 @@
                 font-size: 20px;
             }
 
-            .faq-header {
+            .training-header {
                 padding: 40px 20px 10px;
             }
 
-            .faq-header h1 {
+            .training-header h1 {
                 font-size: 28px;
             }
 
-            .faq-header p {
+            .training-header p {
                 font-size: 15px;
             }
 
-            .faq-section {
+            .training-section {
                 padding: 10px 15px 40px;
             }
 
-            .faq-question {
-                padding: 15px 15px;
-            }
-
-            .faq-question h3 {
+            .training-intro p {
                 font-size: 15px;
             }
 
-            .faq-answer {
-                padding: 0 15px;
+            .training-card {
+                padding: 30px 20px 25px;
             }
 
-            .faq-answer.open {
-                padding: 0 15px 18px;
+            .training-card h3 {
+                font-size: 18px;
             }
 
-            .faq-answer p {
+            .learn-section {
+                padding: 25px 20px;
+            }
+
+            .learn-section h2 {
+                font-size: 22px;
+            }
+
+            .learn-list li {
                 font-size: 14px;
+            }
+
+            .training-cta {
+                padding: 35px 20px;
+            }
+
+            .training-cta h2 {
+                font-size: 22px;
+            }
+
+            .training-cta p {
+                font-size: 14px;
+            }
+
+            .training-cta .btn-cta {
+                padding: 12px 35px;
+                font-size: 13px;
             }
 
             .footer {
@@ -563,12 +718,13 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="index.html#services">SERVICES</a></li>
             <li><a href="portfolio.html">PORTFOLIO</a></li>
-            <li><a href="training.html">TRAINING</a></li>
+            <li><a href="training.html" class="active">TRAINING</a></li>
             <li><a href="about.html">ABOUT US</a></li>
-            <li><a href="faq.html" class="active">FAQ</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="booking-policy.html">BOOKING POLICY</a></li>
             <li>
                 <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%20want%20to%20book%20an%20appointment%20please." target="_blank" class="mobile-book-btn">
-                     BOOK AN APPOINTMENT
+                    <i class="fab fa-whatsapp"></i> BOOK AN APPOINTMENT
                 </a>
             </li>
         </ul>
@@ -586,135 +742,76 @@
     <!-- ===== MAIN CONTENT ===== -->
     <main>
 
-        <!-- FAQ Header -->
-        <section class="faq-header">
-            <h1>Frequently <span>Asked Questions</span></h1>
+        <!-- Training Header -->
+        <section class="training-header">
+            <h1>Our <span>Training</span></h1>
             <div class="divider"></div>
-            <p>Everything you need to know about starting and maintaining your locs</p>
+            <p>Learn the art of locs and braids from a professional</p>
         </section>
 
-        <!-- ===== FAQ SECTION ===== -->
-        <section class="faq-section">
+        <!-- ===== TRAINING SECTION ===== -->
+        <section class="training-section">
 
-            <!-- FAQ 1 -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Can I start my locs with relaxed hair?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes you can always start your locs with either natural or relaxed hair.</p>
-                </div>
+            <!-- Intro -->
+            <div class="training-intro">
+                <p>At Zainy's Hair, we believe in empowering the next generation of locticians and braiders. Our training programs are designed to give you hands-on experience, professional techniques, and the confidence to build your own clientele.</p>
             </div>
 
-            <!-- FAQ 2 -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>For how long can I go without retie maintenance?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+            <!-- Training Cards -->
+            <div class="training-grid">
+
+                <!-- Training 1 -->
+                <div class="training-card">
+                    <div class="icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Beginner's Locs Installation</h3>
+                    <p>Learn the fundamentals of starting locs, from consultation to installation. Perfect for those new to the craft.</p>
+                    <span class="price">From £350</span>
+                    <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%27m%20interested%20in%20the%20Beginner%27s%20Locs%20Installation%20training." target="_blank" class="btn-training"><i class="fab fa-whatsapp"></i> Enquire Now</a>
                 </div>
-                <div class="faq-answer">
-                    <p>First retie has to be after 6 weeks after which you can do 6-8 weeks. That's approximately 6-8 times yearly.</p>
+
+                <!-- Training 2 -->
+                <div class="training-card">
+                    <div class="icon"><i class="fas fa-award"></i></div>
+                    <h3>Advanced Locs Maintenance</h3>
+                    <p>Master retie techniques, repair methods, and styling for mature locs. Ideal for existing locticians looking to upskill.</p>
+                    <span class="price">From £450</span>
+                    <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%27m%20interested%20in%20the%20Advanced%20Locs%20Maintenance%20training." target="_blank" class="btn-training"><i class="fab fa-whatsapp"></i> Enquire Now</a>
                 </div>
+
+                <!-- Training 3 -->
+                <div class="training-card">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h3>One-on-One Mentorship</h3>
+                    <p>Personalised coaching tailored to your skill level and goals. Includes business advice and hands-on practice.</p>
+                    <span class="price">From £550</span>
+                    <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%27m%20interested%20in%20the%20One-on-One%20Mentorship%20training." target="_blank" class="btn-training"><i class="fab fa-whatsapp"></i> Enquire Now</a>
+                </div>
+
             </div>
 
-            <!-- FAQ 3 -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>How many inches of hair can I start my locs with?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>You can always start your locs with as short as 3 inches of hair, however, not all methods of installation is suitable for such short length.</p>
-                </div>
+            <!-- What You'll Learn -->
+            <div class="learn-section">
+                <h2>What You'll <span>Learn</span></h2>
+                <ul class="learn-list">
+                    <li>Client consultation and hair assessment</li>
+                    <li>Proper hair preparation and sectioning</li>
+                    <li>Locs installation methods (Micro Twist, Micro Braids, Sisterlocks, Instant Locs)</li>
+                    <li>Retie and maintenance techniques</li>
+                    <li>Locs repair and restoration</li>
+                    <li>Scalp care and hair health</li>
+                    <li>Product knowledge and recommendations</li>
+                    <li>Client aftercare advice</li>
+                    <li>Business setup and pricing strategies</li>
+                    <li>Professionalism and client management</li>
+                </ul>
             </div>
 
-            <!-- FAQ 4 -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>What's the difference between the 3 locs methods?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>All methods gives the same end result with proper retie maintenance, however, installation method is determined by your hair type, density and length.</p>
-                </div>
+            <!-- CTA -->
+            <div class="training-cta">
+                <h2>Ready to <span>Start?</span></h2>
+                <p>Whether you're a complete beginner or looking to refine your skills, we have a training program for you. Get in touch to discuss your goals and reserve your spot.</p>
+                <a href="https://wa.me/447823687576?text=Hello%20Zainy%2C%20I%27m%20interested%20in%20your%20training%20programs." target="_blank" class="btn-cta"><i class="fab fa-whatsapp"></i> Book a Training</a>
             </div>
-
-            <!-- FAQ 5 -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>When do my locs mature?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>Locs maturity depends on the method you start with. Some method takes longer while other takes shorter. A proper consultation would give you adequate information on what you should expect.</p>
-                </div>
-            </div>
-
-            <!-- FAQ 6 -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Why are my locs unravelling?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>Your locs early stage are prone to unravelling. Few at the back might come off because your back hair are always softer than the front and middle which makes it more prone to unravelling.</p>
-                </div>
-            </div>
-
-            <!-- FAQ 7 -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Which method is the best to start your locs?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>There is no good or bad method to start your locs. It depends on your personal preferences, how you expect your locs to look in the future, your hair length, density and type.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>When can I wash my Locs after installation?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>It’s advised to wash your Locs when you are ready for your first 6weeks retie maintenance to avoid slippage. Braid banding is very important before washing. </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>How do I maintain my Locs?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>Locs maintenance differs, however, a few drop of oil in a spray bottle of water is advisable to keep your Locs moisturized. A ratio of 95%water 5%oil </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>How often do I spray my Locs? </h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>Doesn’t matter how many times, it’s advised to do less spraying during the first 6mnths of your locs.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Which of the locs requires low maintenance ?</h3>
-                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>All locs need to be maintained properly. Your Locs shouldn’t go longer than 2mnths before a retie. Staying longer than that might cause slippage which would mean your Locs require repair.</p>
-                </div>
-            </div>
-
-
-
 
         </section>
 
@@ -738,9 +835,10 @@
                 <a href="index.html">Home</a>
                 <a href="index.html#services">Services</a>
                 <a href="portfolio.html">Portfolio</a>
-                <a href="#">Training</a>
-                <a href="#">About Us</a>
+                <a href="training.html">Training</a>
+                <a href="about.html">About Us</a>
                 <a href="faq.html">FAQ</a>
+                <a href="booking-policy.html">Booking Policy</a>
             </div>
 
             <div class="footer-col">
@@ -777,30 +875,6 @@
                 hamburger.classList.remove('active');
             });
         });
-
-        // ===== FAQ TOGGLE SCRIPT =====
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('.toggle-icon');
-
-            const allAnswers = document.querySelectorAll('.faq-answer');
-            const allIcons = document.querySelectorAll('.toggle-icon');
-
-            allAnswers.forEach((item) => {
-                if (item !== answer) {
-                    item.classList.remove('open');
-                }
-            });
-
-            allIcons.forEach((item) => {
-                if (item !== icon) {
-                    item.classList.remove('open');
-                }
-            });
-
-            answer.classList.toggle('open');
-            icon.classList.toggle('open');
-        }
     </script>
 
 </body>
