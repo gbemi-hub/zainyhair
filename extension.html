@@ -309,6 +309,39 @@
             line-height: 1.8;
         }
 
+        /* NEW: Mini Table for the Pre-locked prices */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 5px;
+        }
+
+        .price-table th {
+            font-size: 13px;
+            color: #d4a373;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(212, 163, 115, 0.4);
+            text-align: center;
+        }
+
+        .price-table th:first-child {
+            text-align: left;
+            width: 30%;
+        }
+
+        .price-table td {
+            font-size: 16px;
+            color: #4a3724;
+            font-weight: 600;
+            padding: 4px 0;
+            text-align: center;
+        }
+
+        .price-table td:first-child {
+            text-align: left;
+        }
+
         .price-box .price-note {
             font-size: 14px;
             color: #d4a373;
@@ -597,6 +630,16 @@
                 line-height: 1.5;
             }
 
+            .price-table th {
+                font-size: 10px;
+                padding-bottom: 5px;
+            }
+
+            .price-table td {
+                font-size: 12px;
+                padding: 2px 0;
+            }
+
             .price-box .price-note {
                 font-size: 11px;
                 margin-top: 8px;
@@ -678,6 +721,14 @@
 
             .price-box .price-list {
                 font-size: 12px;
+            }
+
+            .price-table th {
+                font-size: 9px;
+            }
+
+            .price-table td {
+                font-size: 11px;
             }
 
             .pictures-grid img {
@@ -814,16 +865,54 @@
                     </div>
                     
                     <div class="price-box">
-                        <div class="price-list">
-                            6" — 100€ / 130€<br>
-                            8" — 130€ / 160€<br>
-                            10" — 160€ / 180€<br>
-                            12" — 190€ / 210€<br>
-                            14" — 200€ / 230€<br>
-                            16" — 215€ / 250€<br>
-                            18" — 230€ / 280€
-                        </div>
-                        <span class="price-note">Prices are per 100 strands<br>(0.1-0.2cm / 0.3-0.4cm)</span>
+                        <!-- This is the new mini-table that puts the cm headers exactly over the prices -->
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Length</th>
+                                    <th>0.1-0.2cm</th>
+                                    <th>0.3-0.4cm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6"</td>
+                                    <td>100€</td>
+                                    <td>130€</td>
+                                </tr>
+                                <tr>
+                                    <td>8"</td>
+                                    <td>130€</td>
+                                    <td>160€</td>
+                                </tr>
+                                <tr>
+                                    <td>10"</td>
+                                    <td>160€</td>
+                                    <td>180€</td>
+                                </tr>
+                                <tr>
+                                    <td>12"</td>
+                                    <td>190€</td>
+                                    <td>210€</td>
+                                </tr>
+                                <tr>
+                                    <td>14"</td>
+                                    <td>200€</td>
+                                    <td>230€</td>
+                                </tr>
+                                <tr>
+                                    <td>16"</td>
+                                    <td>215€</td>
+                                    <td>250€</td>
+                                </tr>
+                                <tr>
+                                    <td>18"</td>
+                                    <td>230€</td>
+                                    <td>280€</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span class="price-note">Prices are per 100 strands</span>
                     </div>
                 </div>
 
